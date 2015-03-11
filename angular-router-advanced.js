@@ -178,6 +178,28 @@ angular
                     }
 
                     return url;
+                },
+
+                getAlternatesFromStaticRoutes : function (key, languages) {
+                    var result=[];
+                    for(var i =0;i<languages.length;i++){
+                        var p= {};
+                        p.lang =languages[i];
+                        result.push({route:this.routePath(key,p),lang:languages[i]});
+
+                    };
+                    return result;
+                },
+                
+                getAlternatesFromDynamicRoutes : function (key, params) {
+                    var result=[];
+                    for(var i =0;i<params.length;i++){
+                        var p = params[i];
+                        console.log(p);
+                        result.push({route:this.routePath(key,p),lang: p.lang});
+
+                    };
+                    return result;
                 }
             };
         };
