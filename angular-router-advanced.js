@@ -195,7 +195,6 @@ angular
                     var result=[];
                     for(var i =0;i<params.length;i++){
                         var p = params[i];
-                        console.log(p);
                         result.push({route:this.routePath(key,p),lang: p.lang});
 
                     };
